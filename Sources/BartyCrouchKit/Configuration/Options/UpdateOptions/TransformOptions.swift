@@ -4,7 +4,7 @@ import Foundation
 import MungoHealer
 import Toml
 
-struct TransformOptions {
+public struct TransformOptions {
     let codePath: String
     let localizablePath: String
     let transformer: Transformer

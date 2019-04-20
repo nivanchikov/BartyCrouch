@@ -3,7 +3,7 @@
 import Foundation
 import Toml
 
-struct NormalizeOptions {
+public struct NormalizeOptions {
     let path: String
     let sourceLocale: String
     let harmonizeWithSource: Bool

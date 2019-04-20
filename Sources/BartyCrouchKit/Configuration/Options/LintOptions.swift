@@ -4,7 +4,7 @@ import Foundation
 import MungoHealer
 import Toml
 
-struct LintOptions {
+public struct LintOptions {
     let path: String
     let duplicateKeys: Bool
     let emptyValues: Bool

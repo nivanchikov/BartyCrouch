@@ -3,7 +3,7 @@
 import Foundation
 import Toml
 
-struct InterfacesOptions {
+public struct InterfacesOptions {
     let path: String
     let defaultToBase: Bool
     let ignoreEmptyStrings: Bool

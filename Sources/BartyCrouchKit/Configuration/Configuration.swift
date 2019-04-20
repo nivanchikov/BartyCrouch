@@ -14,6 +14,11 @@ public struct Configuration {
     let updateOptions: UpdateOptions
     let lintOptions: LintOptions
 
+    public init(updateOptions: UpdateOptions, lintOptions: LintOptions) {
+        self.updateOptions = updateOptions
+        self.lintOptions = lintOptions
+    }
+    
     public static func load(from url: URL? = nil) throws -> Configuration {
         let configURL = url ?? self.configUrl
         

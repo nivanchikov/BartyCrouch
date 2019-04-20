@@ -4,7 +4,7 @@ import Foundation
 import MungoHealer
 import Toml
 
-struct TranslateOptions {
+public struct TranslateOptions {
     let path: String
     let secret: String
     let sourceLocale: String

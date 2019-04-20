@@ -3,7 +3,7 @@
 import Foundation
 import Toml
 
-struct CodeOptions {
+public struct CodeOptions {
     let codePath: String
     let localizablePath: String
     let defaultToKeys: Bool
