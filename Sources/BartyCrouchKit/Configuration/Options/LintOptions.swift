@@ -8,6 +8,15 @@ public struct LintOptions {
     let path: String
     let duplicateKeys: Bool
     let emptyValues: Bool
+    
+    public init(
+        path: String = ".",
+        duplicateKeys: Bool = true,
+        emptyValues: Bool = true) {
+        self.path = path
+        self.duplicateKeys = duplicateKeys
+        self.emptyValues = emptyValues
+    }
 }
 
 extension LintOptions: TomlCodable {
