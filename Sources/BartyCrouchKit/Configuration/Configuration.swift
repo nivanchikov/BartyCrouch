@@ -4,7 +4,7 @@ import Foundation
 import MungoHealer
 import Toml
 
-struct Configuration {
+public struct Configuration {
     static let fileName: String = ".bartycrouch.toml"
 
     static var configUrl: URL {
@@ -14,14 +14,14 @@ struct Configuration {
     let updateOptions: UpdateOptions
     let lintOptions: LintOptions
 
-    static func load() throws -> Configuration {
-        let configUrl = self.configUrl
-
-        guard FileManager.default.fileExists(atPath: configUrl.path) else {
+    public static func load(from url: URL? = nil) throws -> Configuration {
+        let configURL = url ?? self.configUrl
+        
+        guard FileManager.default.fileExists(atPath: configURL.path) else {
             return try Configuration.make(toml: try Toml(withString: ""))
         }
 
-        let toml: Toml = try Toml(contentsOfFile: configUrl.path)
+        let toml: Toml = try Toml(contentsOfFile: configURL.path)
         return try Configuration.make(toml: toml)
     }
 }

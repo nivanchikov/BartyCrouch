@@ -11,9 +11,15 @@ public class UpdateCommand: Command {
     // MARK: - Initializers
     public init() {}
 
-    // MARK: - Instance Methods
     public func execute() throws {
-        let updateOptions = try Configuration.load().updateOptions
+        let configuration = try Configuration.load()
+        try execute(with: configuration)
+    }
+    
+    // MARK: - Instance Methods
+    public func execute(with configuration: Configuration? = nil) throws {
+        let config = try configuration ?? Configuration.load()
+        let updateOptions = config.updateOptions
 
         for task in updateOptions.tasks {
             let taskHandler: TaskHandler = {

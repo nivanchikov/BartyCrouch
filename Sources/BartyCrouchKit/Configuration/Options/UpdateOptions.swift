@@ -4,7 +4,7 @@ import Foundation
 import MungoHealer
 import Toml
 
-struct UpdateOptions {
+public struct UpdateOptions {
     enum Task: String {
         case interfaces
         case code
