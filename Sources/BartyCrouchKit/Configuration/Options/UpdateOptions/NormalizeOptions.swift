@@ -8,6 +8,13 @@ public struct NormalizeOptions {
     let sourceLocale: String
     let harmonizeWithSource: Bool
     let sortByKeys: Bool
+    
+    public init(path: String = ".", sourceLocale: String = "en", harmonizeWithSource: Bool = true, sortByKeys: Bool = true) {
+        self.path = path
+        self.sourceLocale = sourceLocale
+        self.harmonizeWithSource = harmonizeWithSource
+        self.sortByKeys = sortByKeys
+    }
 }
 
 extension NormalizeOptions: TomlCodable {

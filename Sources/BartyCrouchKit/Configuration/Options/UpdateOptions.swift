@@ -5,7 +5,7 @@ import MungoHealer
 import Toml
 
 public struct UpdateOptions {
-    enum Task: String {
+    public enum Task: String {
         case interfaces
         case code
         case transform
@@ -19,6 +19,15 @@ public struct UpdateOptions {
     let transform: TransformOptions
     let translate: TranslateOptions?
     let normalize: NormalizeOptions
+    
+    public init(tasks: [Task], interfaces: InterfacesOptions, code: CodeOptions, transform: TransformOptions, translate: TranslateOptions? = nil, normalize: NormalizeOptions) {
+        self.tasks = tasks
+        self.interfaces = interfaces
+        self.code = code
+        self.transform = transform
+        self.translate = translate
+        self.normalize = normalize
+    }
 }
 
 extension UpdateOptions: TomlCodable {

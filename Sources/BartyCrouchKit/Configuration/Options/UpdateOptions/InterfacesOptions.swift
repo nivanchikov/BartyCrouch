@@ -8,6 +8,13 @@ public struct InterfacesOptions {
     let defaultToBase: Bool
     let ignoreEmptyStrings: Bool
     let unstripped: Bool
+    
+    public init(path: String = ".", defaultToBase: Bool = false, ignoreEmptyStrings: Bool = false, unstripped: Bool = false) {
+        self.path = path
+        self.defaultToBase = defaultToBase
+        self.ignoreEmptyStrings = ignoreEmptyStrings
+        self.unstripped = unstripped
+    }
 }
 
 extension InterfacesOptions: TomlCodable {

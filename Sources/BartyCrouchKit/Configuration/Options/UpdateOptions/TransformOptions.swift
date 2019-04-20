@@ -12,6 +12,23 @@ public struct TransformOptions {
     let typeName: String
     let translateMethodName: String
     let customLocalizableName: String?
+    
+    public init(
+        codePath: String = ".",
+        localizablePath: String = ".",
+        transformer: Transformer,
+        supportedLanguageEnumPath: String = ".",
+        typeName: String = "BartyCrouch",
+        translateMethodName: String = "translate",
+        customLocalizableName: String? = nil) {
+        self.codePath = codePath
+        self.localizablePath = localizablePath
+        self.transformer = transformer
+        self.supportedLanguageEnumPath = supportedLanguageEnumPath
+        self.typeName = typeName
+        self.translateMethodName = translateMethodName
+        self.customLocalizableName = customLocalizableName
+    }
 }
 
 extension TransformOptions: TomlCodable {

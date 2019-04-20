@@ -11,6 +11,16 @@ public struct CodeOptions {
     let customFunction: String?
     let customLocalizableName: String?
     let unstripped: Bool
+    
+    public init(codePath: String = ".", localizablePath: String = ".", defaultToKeys: Bool = false, additive: Bool = true, customFunction: String? = nil, customLocalizableName: String? = nil, unstripped: Bool = false) {
+        self.codePath = codePath
+        self.localizablePath = localizablePath
+        self.defaultToKeys = defaultToKeys
+        self.additive = additive
+        self.customFunction = customFunction
+        self.customLocalizableName = customLocalizableName
+        self.unstripped = unstripped
+    }
 }
 
 extension CodeOptions: TomlCodable {

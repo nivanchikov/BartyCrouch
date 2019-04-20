@@ -8,6 +8,12 @@ public struct TranslateOptions {
     let path: String
     let secret: String
     let sourceLocale: String
+    
+    public init(path: String = ".", secret: String, sourceLocale: String = "en") {
+        self.path = path
+        self.secret = secret
+        self.sourceLocale = sourceLocale
+    }
 }
 
 extension TranslateOptions: TomlCodable {
