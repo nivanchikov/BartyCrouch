@@ -265,7 +265,7 @@ public class CommandLineActor {
         print("Successfully updated strings file(s) of Code files.", level: .success, file: inputDirectoryPath)
     }
 
-    private func incrementalInterfacesUpdate(
+    public func incrementalInterfacesUpdate(
         _ inputFilePath: String,
         _ outputStringsFilePaths: [String],
         override: Bool,
