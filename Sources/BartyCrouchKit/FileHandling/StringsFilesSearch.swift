@@ -19,7 +19,14 @@ public final class StringsFilesSearch: FilesSearchable {
         let ibFileRegex = try! NSRegularExpression(pattern: "^(.*\\/)?\(locale).lproj.*\\.(storyboard|xib)\\z", options: .caseInsensitive)
         return self.findAllFilePaths(inDirectoryPath: baseDirectoryPath, matching: ibFileRegex)
     }
-
+    
+    // MARK: - Instance Methods
+    public func findAllIBFiles(within baseDirectoryPath: String) -> [String] {
+        // swiftlint:disable:next force_try
+        let ibFileRegex = try! NSRegularExpression(pattern: "^(.*\\/).*\\.(storyboard|xib)\\z", options: .caseInsensitive)
+        return self.findAllFilePaths(inDirectoryPath: baseDirectoryPath, matching: ibFileRegex)
+    }
+    
     public func findAllStringsFiles(within baseDirectoryPath: String, withLocale locale: String) -> [String] {
         // swiftlint:disable:next force_try
         let stringsFileRegex = try! NSRegularExpression(pattern: "^(.*\\/)?\(locale).lproj.*\\.strings\\z", options: .caseInsensitive)
